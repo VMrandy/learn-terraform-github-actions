@@ -12,10 +12,10 @@ terraform {
   required_version = "~> 1.0"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "NOT-QUITE-RIGHT"
 
     workspaces {
-      name = "REPLACE_ME"
+      name = "Demo-Github-Actions"
     }
   }
 }
@@ -30,7 +30,7 @@ provider "aws" {
 resource "random_pet" "sg" {}
 
 resource "aws_instance" "web" {
-  ami                    = "ami-09e67e426f25ce0d7"
+  ami                    = "learn-terraform-packer-20220103233836"
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.web-sg.id]
 
